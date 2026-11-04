@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Certifikované měření umělého a nouzového osvětlení, světelné studie a posouzení rušivého světla. Přesnost, rychlost, spolehlivost. Praha, ČR a střední Evropa.">
+<meta name="theme-color" content="#050b14">
+<meta name="author" content="Mgr. et BcA. Jaromír Vavroch">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add("js");</script>
+<title>Měření osvětlení a světelné studie</title>
+<style>
+@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/inter-400.woff") format("woff")}
+@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/inter-600.woff") format("woff")}
+@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/inter-700.woff") format("woff")}
+@font-face{font-family:Inter;font-style:normal;font-weight:800;font-display:swap;src:url("assets/fonts/inter-800.woff") format("woff")}
+
+:root{color-scheme:dark;--bg:#050b14;--panel:#0d1421;--text:#f5f7fa;--muted:#b7bfcb;--yellow:#ffc400;--line:rgba(255,255,255,.12);--max:1200px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;font-synthesis:none;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit;-webkit-appearance:none;appearance:none}
+img{display:block;max-width:100%}
+svg{display:block;flex-shrink:0}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--yellow);outline-offset:4px}
+.skip-link{position:fixed;top:10px;left:14px;z-index:30;padding:10px 16px;color:#111;background:var(--yellow);border-radius:4px;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
+.container{width:min(var(--max),calc(100% - 44px));margin-inline:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(3,8,15,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;line-height:1.15;letter-spacing:.02em;flex-shrink:0}
+.brand-icon{display:block;width:32px;height:40px;flex:0 0 32px;color:var(--yellow);filter:drop-shadow(0 0 0 transparent);transition:filter .3s,transform .3s}
+.brand-icon svg{width:100%;height:100%}
+.brand small{display:block;color:var(--yellow);font-size:.8rem;letter-spacing:.08em}
+.bulb-glass{transition:filter .3s}
+nav{display:flex;align-items:center;gap:28px;font-size:.83rem;font-weight:700;text-transform:uppercase}
+nav a{padding:8px 0;color:#e6e9ef}
+nav a:hover{color:var(--yellow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border:1px solid var(--yellow);border-radius:4px;color:var(--yellow);font-weight:800;font-size:.86rem;line-height:1.5;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--yellow);color:#111}
+.btn.primary{background:var(--yellow);color:#111}
+.btn.primary:hover{background:#ffda4d;border-color:#ffda4d}
+.nav>.btn{font-size:.9rem}
+.mail-icon{width:26px;height:26px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.menu-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:4px;padding:10px 12px;cursor:pointer;flex-shrink:0}
+.menu-toggle .menu-close{display:none}
+.menu-toggle[aria-expanded="true"] .menu-open{display:none}
+.menu-toggle[aria-expanded="true"] .menu-close{display:block}
+.hero{position:relative;isolation:isolate;min-height:390px;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:url('assets/photos/hero-building.jpg');background-size:cover;background-position:center 53%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(3,8,15,.98) 0%,rgba(3,8,15,.9) 32%,rgba(3,8,15,.35) 65%,rgba(3,8,15,.12) 100%),linear-gradient(0deg,rgba(3,8,15,.38),transparent 45%);transition:opacity .3s}
+.hero-content{padding:56px 0;max-width:570px}
+.eyebrow{font-size:.78rem;text-transform:uppercase;color:var(--yellow);font-weight:800;letter-spacing:.13em}
+h1{font-size:clamp(2.3rem,5vw,4.6rem);line-height:1.02;margin:12px 0 18px;letter-spacing:-.04em;text-transform:uppercase}
+h1 span{display:block;color:var(--yellow);font-size:1.12em}
+.hero h2{font-size:1.08rem;line-height:1.4;margin:0 0 14px}
+.hero p{color:#d2d7df;max-width:490px;margin:0 0 24px;font-size:.98rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+section{padding:48px 0}
+.section-heading{text-align:center;margin-bottom:28px}
+.section-heading .eyebrow{margin-bottom:3px}
+h2.section-title{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.2;margin:0}
+.heading-line{height:3px;width:48px;background:var(--yellow);margin:14px auto 0}
+.services-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.service-card{background:linear-gradient(145deg,#121a29,#0c121e);border:1px solid rgba(255,255,255,.06);border-radius:5px;overflow:hidden;transition:transform .2s,border-color .2s}
+
+.service-card img{width:100%;height:155px;object-fit:cover;background:#101827}
+.card-content{padding:16px 16px 18px}
+.service-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#070d16;border:2px solid var(--yellow);color:var(--yellow);margin-top:-38px;position:relative;margin-bottom:12px}
+.service-icon svg,.strength .symbol svg{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;shape-rendering:geometricPrecision}
+.service-icon svg{width:26px;height:26px;stroke-width:1.8}
+.service-card h3{font-size:.93rem;line-height:1.35;margin:0 0 9px;text-transform:uppercase}
+.service-card p{font-size:.9rem;color:var(--muted);margin:0}
+.about-grid{display:grid;grid-template-columns:1.25fr 1.1fr 1fr;gap:28px;align-items:center}
+.about-grid>*{min-width:0}
+.about-copy h2{font-size:1.5rem;line-height:1.3;margin:6px 0 12px}
+.about-copy p{color:var(--muted);margin:0;font-size:.94rem}
+.strengths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.strength{text-align:center;padding:16px 8px;border-inline:1px solid var(--line)}
+.strength .symbol{display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin:0 auto;color:var(--yellow);border:1px solid rgba(255,196,0,.22);border-radius:16px;background:rgba(255,196,0,.045)}
+.strength .symbol svg{width:38px;height:38px;stroke-width:1.7}
+.strength strong{display:block;margin-top:8px;font-size:.88rem;line-height:1.4}
+.contact{border-left:1px solid var(--line);padding-left:24px}
+.contact h3{font-size:.85rem;color:var(--yellow);letter-spacing:.12em;margin:0 0 10px}
+.contact-list{display:grid;gap:12px}
+.contact-list a,.contact-list .contact-place{display:flex;gap:12px;align-items:center;font-size:.92rem;overflow-wrap:anywhere;min-width:0}
+.contact-icon{flex:0 0 42px;width:42px;height:42px;border:2px solid var(--yellow);border-radius:50%;display:grid;place-items:center;color:var(--yellow);background:rgba(255,196,0,.035);box-shadow:0 0 0 5px rgba(255,196,0,.035)}
+.contact-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;shape-rendering:geometricPrecision}
+.contact-list a[href^="mailto:"] .contact-icon svg{width:30px;height:30px;stroke-width:1.4}
+.contact-detail{display:block;min-width:0;line-height:1.35}
+.contact-detail strong{display:block;color:var(--text);font-size:.96rem;margin-bottom:3px}
+.contact-detail small{display:block;color:var(--muted);font-size:.82rem;overflow-wrap:anywhere}
+
+footer{border-top:1px solid var(--line);padding:18px 0;color:#aeb7c4;font-size:.8rem}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer a:hover{color:var(--yellow)}
+.light-control-wrap{display:none;background:#080f1a;border-bottom:1px solid var(--line)}
+.home-ready .light-control-wrap{display:block}
+.light-control-inner{display:flex;align-items:center;justify-content:flex-end;gap:16px;padding:10px 0}
+.light-control-note{font-size:.78rem;color:var(--muted)}
+.light-toggle{display:inline-flex;align-items:center;gap:7px;flex-shrink:0;padding:6px 10px;cursor:pointer;background:transparent;font-size:.76rem;font-weight:600;border:1.6px solid rgba(255,196,0,.55);border-radius:5px}
+.light-toggle:hover{background:rgba(255,196,0,.08);color:var(--yellow)}
+.light-switch-icon{width:25px;height:15px;flex:none;overflow:visible}
+.light-switch-icon .switch-track{fill:transparent;stroke:currentColor;opacity:.85}
+.light-switch-icon .switch-knob{fill:currentColor;transition:transform .18s ease}
+body.light-on .light-switch-icon .switch-knob{transform:translateX(10px)}
+body.light-on .brand-icon{filter:drop-shadow(0 0 7px #ffc400) drop-shadow(0 0 18px #ffc400);transform:scale(1.08)}
+body.light-on .bulb-glass{filter:brightness(1.18)}
+body.light-on .light-control-wrap{background:linear-gradient(90deg,#101827,#302607,#101827)}
+body.light-on .light-toggle{background:rgba(255,196,0,.12);color:var(--yellow);border-color:var(--yellow)}
+body.light-on .hero::after{opacity:.72}
+@media(min-width:901px) and (max-width:1120px){.nav{gap:14px}nav{gap:14px}.nav>.btn{padding:10px 12px;font-size:.8rem}.about-grid{grid-template-columns:1fr 1fr}.contact{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.contact-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){nav{gap:14px}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr 1fr}.contact{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.contact-list{grid-template-columns:repeat(3,minmax(0,1fr))}.nav>.btn{display:none}}
+@media(max-width:650px){
+ .container{width:calc(100% - 28px)}.nav{min-height:68px;flex-wrap:wrap;padding:10px 0;gap:12px}.brand{font-size:.9rem;gap:10px}.menu-toggle{display:none}.js .menu-toggle{display:block}
+ nav{display:flex;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:0 0 10px;max-height:calc(100svh - 80px);overflow-y:auto}.js nav{display:none}.js nav.open{display:flex}nav a{padding:12px 2px;border-top:1px solid var(--line)}
+ .hero{min-height:420px}.hero::before{background-position:62% center}.hero::after{background:linear-gradient(90deg,rgba(3,8,15,.96),rgba(3,8,15,.68)),linear-gradient(0deg,rgba(3,8,15,.25),transparent)}.hero-content{padding:48px 0}
+ h1{font-size:clamp(2rem,9vw,2.7rem)}section{padding:38px 0}.services-grid{grid-template-columns:1fr}.service-card img{height:210px}.about-grid{grid-template-columns:1fr}.strength{padding:14px 4px}.strength .symbol{width:52px;height:52px}.strength .symbol svg{width:36px;height:36px}.strength strong{font-size:.8rem}.contact{grid-column:auto}.contact-list{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-direction:column}.light-control-inner{justify-content:space-between;gap:8px}.light-control-note{font-size:.72rem}
+}
+@media(max-width:350px){.brand{font-size:.8rem}.brand small{font-size:.72rem}.brand-icon{width:28px;flex-basis:28px}.menu-toggle{padding:9px 10px}.eyebrow{font-size:.7rem;letter-spacing:.1em}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+.contact-method{position:relative;min-width:0}.contact-method .contact-detail{flex:1}.home-ready .contact-method .contact-detail strong{padding-right:112px}
+.contact-copy{position:absolute;top:0;right:0;display:none;margin:0;padding:2px 8px;align-items:center;gap:6px;border:1px solid rgba(255,196,0,.25);border-radius:4px;background:rgba(255,196,0,.035);color:var(--muted);font-size:.72rem;line-height:1.5;cursor:pointer;max-width:108px;min-height:26px;white-space:nowrap;transition:color .18s,border-color .18s,background .18s}
+.home-ready .contact-copy{display:inline-flex}
+.contact-copy svg{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-copy:hover,.contact-copy.copied{color:var(--yellow);border-color:rgba(255,196,0,.7);background:rgba(255,196,0,.08)}
+.contact-copy:disabled{cursor:wait}
+.contact-copy-status{font-size:.75rem;line-height:1.5;color:var(--yellow);margin:12px 0 0;overflow-wrap:anywhere}
+.contact-copy-status:empty{display:none}
+.copy-manual{margin:8px 0 0 54px}
+.copy-manual[hidden]{display:none}
+.copy-manual input{display:block;width:100%;min-width:0;padding:8px;border:1px solid var(--yellow);border-radius:4px;background:var(--bg);color:var(--text);font:inherit;font-size:16px;outline-offset:2px}
+
+@media(min-width:651px) and (max-width:900px){.contact-copy{padding:5px;width:28px;min-height:28px;justify-content:center}.contact-copy .copy-button-text{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.home-ready .contact-method .contact-detail strong{padding-right:36px}}
+
+/* Light only the SVG under the pointer, never its frame or parent card. */
+@media (hover:hover) and (pointer:fine){
+ .service-icon svg:hover,
+ .strength .symbol svg:hover,
+ .contact-icon svg:hover{
+  color:#fff3b0;
+  filter:drop-shadow(0 0 3px #ffc400) drop-shadow(0 0 7px rgba(255,196,0,.85));
+ }
+}
+</style>
+<link rel="stylesheet" href="assets/header.css"></head>
+<body>
+<a class="skip-link" href="#obsah">Přejít k obsahu</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#uvod" aria-label="Měření a studie osvětlení – úvod">
+      <span class="brand-icon" aria-hidden="true" id="brandBulb"><svg viewBox="0 0 36 44" aria-hidden="true" focusable="false"><defs><radialGradient id="bulbGlass" cx=".35" cy=".28" r=".8"><stop stop-color="#fff8c7"/><stop offset=".52" stop-color="#ffe468"/><stop offset="1" stop-color="#e8ac17"/></radialGradient><linearGradient id="bulbMetal"><stop stop-color="#666e79"/><stop offset=".28" stop-color="#dce1e7"/><stop offset=".52" stop-color="#aab3be"/><stop offset=".72" stop-color="#eef1f4"/><stop offset="1" stop-color="#66717e"/></linearGradient></defs><path class="bulb-glass" d="M18 2C10.5 2 5 7.5 5 14.5c0 5 2.6 8.2 5.8 11.4 1.1 1.1 1.7 2.5 1.7 4.1h11c0-1.6.6-3 1.7-4.1 3.2-3.2 5.8-6.4 5.8-11.4C31 7.5 25.5 2 18 2Z" fill="url(#bulbGlass)" stroke="#dba828" stroke-width=".8"/><path d="M10 13a8 8 0 0 1 5-7" fill="none" stroke="#fffce7" stroke-width="2.2" stroke-linecap="round" opacity=".8"/><path d="m14 19 2 9m6-9-2 9m-6-9 4 3 4-3" fill="none" stroke="#b98118" stroke-width="1.2" stroke-linecap="round"/><path d="M12.5 29.5h11v9c0 1.5-2 2.5-5.5 2.5s-5.5-1-5.5-2.5Z" fill="url(#bulbMetal)" stroke="#65707d" stroke-width=".7"/><g stroke="#66717b" stroke-width="1.1" stroke-linecap="round"><path d="m12.5 31.8 11-1.5m-11 4.3 11-1.5m-11 4.3 11-1.5m-10 4 9-1.3"/></g><path d="M15 41h6l-1.2 2h-3.6Z" fill="#4b535e"/></svg></span>
+      <span>MĚŘENÍ A STUDIE<small>OSVĚTLENÍ</small></span>
+    </a>
+    <button type="button" class="menu-toggle" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="hlavni-navigace"><svg class="menu-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="menu-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <nav id="hlavni-navigace" aria-label="Hlavní navigace">
+      <a href="#uvod">Úvod</a><a href="#sluzby">Služby</a><a href="certifikace.html">Certifikace</a><a href="#omne">O mně</a><a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+<div class="light-control-wrap">
+  <div class="container light-control-inner">
+    <span class="light-control-note">Vyzkoušejte světlo na webu</span>
+    <button type="button" class="btn light-toggle" id="lightToggle" aria-pressed="false" aria-label="Rozsvítit žárovku v logu"><svg class="light-switch-icon" viewBox="0 0 26 16" fill="none" aria-hidden="true" focusable="false"><rect class="switch-track" x=".75" y=".75" width="24.5" height="14.5" rx="7.25" stroke-width="1.8"/><circle class="switch-knob" cx="8" cy="8" r="4.5"/></svg><span class="light-toggle-label">Rozsvítit</span></button>
+  </div>
+</div>
+
+<main id="obsah" tabindex="-1">
+<section class="hero" id="uvod">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow"><span class="warm-glow">Odborné služby v oblasti osvětlení</span></div>
+      <h1>Měření a studie <span class="warm-glow hero-glow">osvětlení</span></h1>
+      <h2>Světlo, které splňuje požadavky a normy.</h2>
+      <p>Nabízím profesionální certifikované měření osvětlení pro potřeby kolaudace, světelné studie interiérů a posouzení rušivého světla. Přesnost, spolehlivost a technické know-how.</p>
+      <div class="actions"><a class="btn primary" href="#sluzby">Služby</a><a class="btn" href="#kontakt">Kontakt</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="container">
+    <div class="section-heading"><div class="eyebrow"><span class="warm-glow">Co nabízím</span></div><h2 class="section-title">Služby</h2><div class="heading-line"></div></div>
+    <div class="services-grid">
+      <article class="service-card">
+        <img src="assets/photos/artificial-lighting-original.jpg" alt="Kancelářský interiér s prosklenými příčkami a závěsným osvětlením" width="1200" height="801" loading="lazy" decoding="async">
+        <div class="card-content"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 16.5c0-2.4-3-3.5-3-7a6.5 6.5 0 0 1 13 0c0 3.5-3 4.6-3 7Z"/><path d="M9 19h6M10.5 21.5h3"/></svg></div><h3>Měření umělého osvětlení</h3><p>Měření osvětlenosti na pracovištích, ve výrobních halách, kancelářích, školách i veřejných prostorech podle příslušných požadavků a norem (ČSN EN 12464-1 a ČSN EN 12464-2).</p></div>
+      </article>
+      <article class="service-card">
+        <img style="object-position:50% 25%" src="assets/photos/emergency-exit-v2.jpg" alt="Zelené nouzové značení nad únikovými dveřmi" width="1200" height="1378" loading="lazy" decoding="async">
+        <div class="card-content"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="1.2" stroke-width="1.8"/><path d="M5.5 12h11.8" stroke-width="2.5"/><path d="m13 7.5 4.5 4.5-4.5 4.5" stroke-width="2.5"/></svg></div><h3>Měření nouzového osvětlení</h3><p>Kontrola a měření nouzového osvětlení únikových cest a dalších prostor podle příslušných požadavků ČSN EN 1838.</p></div>
+      </article>
+      <article class="service-card">
+        <img src="assets/photos/lighting-design.jpg" alt="Závěsná svítidla a teplé osvětlení moderního interiéru" width="1200" height="800" loading="lazy" decoding="async">
+        <div class="card-content"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h11l5 5v13H4zM15 3v5h5"/><path d="M8 13h8M8 17h6M8 9h3"/></svg></div><h3>Studie osvětlení</h3><p>Návrh a výpočty osvětlení interiérů. Optimalizace vizuálního komfortu, energetické náročnosti a splnění požadavků projektu.</p></div>
+      </article>
+      <article class="service-card">
+        <img src="assets/photos/obtrusive-light.jpg" alt="Pouliční svítidla osvětlující noční ulici" width="1200" height="1800" loading="lazy" decoding="async">
+        <div class="card-content"><div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 7 2-2 7-7-2Z"/><path d="m10 9 10-2m-11 5 8 7m-6-8 9 3M5 13v8M2 21h6"/></svg></div><h3>Studie rušivého světla</h3><p>Posouzení vlivu venkovního osvětlení na okolí, výpočty a návrhy opatření pro omezení rušivého světla podle příslušných požadavků ČSN 36 0459.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="omne">
+  <div class="container about-grid">
+    <div class="about-copy">
+      <div class="eyebrow"><span class="warm-glow">O mně</span></div>
+      <h2>Přesnost. Zkušenosti. Rychlost.</h2>
+      <p>Jsem Mgr. et BcA. Jaromír Vavroch. Měření a studiím osvětlení se věnuji více než 4 roky. Ke každému projektu přistupuji individuálně s důrazem na kvalitu, rychlost a dodržení příslušných norem a předpisů.</p>
+    </div>
+    <div class="strengths" aria-label="Hlavní přednosti">
+      <div class="strength"><div class="symbol" aria-hidden="true"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="17" r="11"/><path d="M16 10v7l4 3M12 2h8M16 2v4"/><path d="m25 7 2-2"/></svg></div><strong>Více než 4 roky<br>zkušeností</strong></div>
+      <div class="strength"><div class="symbol" aria-hidden="true"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 3 11 4v9c0 7-11 13-11 13S5 23 5 16V7Z"/><path d="m10.5 15.5 4 4 7-8"/></svg></div><strong>Přesnost<br>a spolehlivost</strong></div>
+      <div class="strength"><div class="symbol" aria-hidden="true"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 23a12 12 0 1 1 20 0"/><path d="m16 18 7-8M7 12l2 1m5-7v2m11 4-2 1M5 28h22"/><circle cx="16" cy="18" r="2"/></svg></div><strong>Rychlost<br>realizace</strong></div>
+    </div>
+    <div class="contact" id="kontakt">
+      <h3><span class="warm-glow">KONTAKT</span></h3>
+      <div class="contact-list">
+        <div class="contact-method">
+        <a href="mailto:mira.vavroch@gmail.com" aria-label="Napište mi e-mailem">
+          <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.8"/><path d="m4 7 8 6 8-6"/></svg></span>
+          <span class="contact-detail"><strong>Napište mi</strong><small>mira.vavroch@gmail.com</small></span>
+        </a>
+          <button class="contact-copy" type="button" data-copy="mira.vavroch@gmail.com" data-copy-kind="email" title="Kopírovat e-mail" aria-label="Kopírovat e-mail mira.vavroch@gmail.com"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><rect x="6" y="6" width="11" height="11" rx="2"/><path d="M13 6V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2"/></svg><span class="copy-button-text">Kopírovat</span></button>
+          <div class="copy-manual" hidden><input type="text" readonly value="mira.vavroch@gmail.com" aria-label="E-mailová adresa ke zkopírování" spellcheck="false"></div>
+        </div>
+        <div class="contact-method">
+        <a href="tel:+420723434062" aria-label="Zavolejte mi">
+          <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3H4.8A1.8 1.8 0 0 0 3 4.8C3 13.7 10.3 21 19.2 21a1.8 1.8 0 0 0 1.8-1.8V17l-5-2-2 2a14 14 0 0 1-4-4l2-2-2-5z"/></svg></span>
+          <span class="contact-detail"><strong>Zavolejte mi</strong><small>723 434 062</small></span>
+        </a>
+          <button class="contact-copy" type="button" data-copy="+420 723 434 062" data-copy-kind="phone" title="Kopírovat telefonní číslo" aria-label="Kopírovat telefonní číslo +420 723 434 062"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" focusable="false"><rect x="6" y="6" width="11" height="11" rx="2"/><path d="M13 6V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2"/></svg><span class="copy-button-text">Kopírovat</span></button>
+          <div class="copy-manual" hidden><input type="text" readonly value="+420 723 434 062" aria-label="Telefonní číslo ke zkopírování" spellcheck="false"></div>
+        </div>
+        <div class="contact-place">
+          <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span class="contact-detail"><strong>Praha, ČR</strong><small>Působnost v celé střední Evropě</small></span>
+        </div>
+      </div>
+      <p class="contact-copy-status" id="contact-copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Měření a studie osvětlení. Všechna práva vyhrazena.</span>
+    <span class="footer-links"><a href="obchodni-podminky.html">Obchodní podmínky</a><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  const year=document.getElementById('year');
+  if(year) year.textContent=new Date().getFullYear();
+  const toggle=document.getElementById('lightToggle');
+  if(toggle){
+    toggle.addEventListener('click',function(){
+      const on=!document.body.classList.contains('light-on');
+      document.body.classList.toggle('light-on',on);
+      toggle.setAttribute('aria-pressed',String(on));
+      toggle.setAttribute('aria-label',on?'Zhasnout žárovku v logu':'Rozsvítit žárovku v logu');
+      toggle.querySelector('.light-toggle-label').textContent=on?'Zhasnout':'Rozsvítit';
+    });
+  }
+  // Copy contacts without depending on a configured mail or calling app.
+  const copyStatus=document.getElementById('contact-copy-status');
+  const copyTimers=new WeakMap();
+  function copyWithSelection(value){
+    const field=document.createElement('textarea');
+    field.value=value;
+    field.readOnly=true;
+    field.setAttribute('aria-label','Kontakt ke zkopírování');
+    field.style.cssText='position:fixed;left:-9999px;top:0;width:1px;height:1px;font-size:16px;';
+    document.body.appendChild(field);
+    let copied=false;
+    try{
+      field.focus({preventScroll:true});
+      field.select();
+      field.setSelectionRange(0,value.length);
+      copied=document.execCommand('copy');
+    }catch(error){copied=false;}
+    field.remove();
+    return copied;
+  }
+  document.querySelectorAll('.contact-copy').forEach(function(button){
+    const label=button.querySelector('.copy-button-text');
+    const originalLabel=label.textContent;
+    button.addEventListener('click',async function(){
+      const value=button.dataset.copy;
+      const method=button.closest('.contact-method');
+      const manual=method.querySelector('.copy-manual');
+      const email=button.dataset.copyKind==='email';
+      clearTimeout(copyTimers.get(button));
+      button.disabled=true;
+      let copied=false;
+      try{
+        if(window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText){
+          await navigator.clipboard.writeText(value);
+          copied=true;
+        }
+      }catch(error){copied=false;}
+      if(!copied) copied=copyWithSelection(value);
+      button.disabled=false;
+      if(copied){
+        manual.hidden=true;
+        label.textContent='Zkopírováno';
+        button.classList.add('copied');
+        button.focus({preventScroll:true});
+        if(copyStatus) copyStatus.textContent=email?'E-mailová adresa byla zkopírována.':'Telefonní číslo bylo zkopírováno.';
+        copyTimers.set(button,setTimeout(function(){
+          label.textContent=originalLabel;
+          button.classList.remove('copied');
+        },2500));
+      }else{
+        label.textContent=originalLabel;
+        button.classList.remove('copied');
+        manual.hidden=false;
+        const field=manual.querySelector('input');
+        field.focus({preventScroll:true});
+        field.select();
+        field.setSelectionRange(0,value.length);
+        if(copyStatus) copyStatus.textContent='Kontakt je označený. Zkopírujte jej ručně (Ctrl+C, na Macu ⌘C), na telefonu podržte označený text.';
+      }
+    });
+  });
+
+  document.documentElement.classList.add("home-ready");
+})();
+</script>
+<script src="assets/header.js"></script>
+</body>
+</html>

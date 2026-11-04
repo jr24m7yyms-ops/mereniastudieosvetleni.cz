@@ -1,0 +1,70 @@
+{
+  "status": "Všechny fotografie jsou uloženy lokálně v assets/photos. Ilustrační fotografie, nikoli dokumentace realizací.",
+  "photos": [
+    {
+      "file": "photos/hero-building.jpg",
+      "url": "https://images.unsplash.com/photo-1764307442837-84fef9ec1372?auto=format&fit=crop&w=2000&q=85",
+      "page": "https://unsplash.com/photos/modern-office-buildings-illuminated-at-night-vGHfAsnfZ74",
+      "source": "Unsplash",
+      "author": "Bernd Dittrich",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "license_checked_on": "2026-11-03",
+      "commercial_use": true,
+      "attribution_required": false,
+      "sha256": "5c372a1165f2146e8f33ef2bb2e9a4b617e4696ff0d467806127dd0f69b729b0"
+    },
+    {
+      "file": "photos/artificial-lighting-original.jpg",
+      "url": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
+      "page": "https://unsplash.com/photos/hallway-between-glass-panel-doors-yWwob8kwOCk",
+      "source": "Unsplash",
+      "author": "Nastuh Abootalebi",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "license_checked_on": "2026-11-03",
+      "commercial_use": true,
+      "attribution_required": false,
+      "sha256": "bde946754c7f98f82842e9cec2e8e31b6ca58642055c16e2d3d9120223e0bf07"
+    },
+    {
+      "file": "photos/emergency-exit-v2.jpg",
+      "url": "https://images.unsplash.com/photo-1732812837481-3ff6c4235995?auto=format&fit=crop&w=1200&q=85",
+      "page": "https://unsplash.com/photos/a-green-exit-sign-above-a-white-door-rc2k3SGI2s8",
+      "source": "Unsplash",
+      "author": "Jakub Żerdzicki",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "license_checked_on": "2026-11-03",
+      "commercial_use": true,
+      "attribution_required": false,
+      "sha256": "a369d5d93164c444d4c2f1486b1d7a872691cbdabe41edad8248b46c804586cf"
+    },
+    {
+      "file": "photos/lighting-design.jpg",
+      "url": "https://images.unsplash.com/photo-1770816307528-67e404552dcf?auto=format&fit=crop&w=1200&q=85",
+      "page": "https://unsplash.com/photos/modern-office-interior-with-pendant-lights-at-night-3SDBYr0mszs",
+      "source": "Unsplash",
+      "author": "Tim Schmidbauer",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "license_checked_on": "2026-11-03",
+      "commercial_use": true,
+      "attribution_required": false,
+      "sha256": "f351d1842b3e724b51aa153a955972098e5437cc486ed7d4ecd9e82708a39c5f"
+    },
+    {
+      "file": "photos/obtrusive-light.jpg",
+      "url": "https://images.unsplash.com/photo-1728423657672-9b714396667e?auto=format&fit=crop&w=1200&q=85",
+      "page": "https://unsplash.com/photos/a-cobblestone-street-at-night-with-a-street-light-on-xe5EKG2GiRA",
+      "source": "Unsplash",
+      "author": "Josef Stepanek",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "license_checked_on": "2026-11-03",
+      "commercial_use": true,
+      "attribution_required": false,
+      "sha256": "3c31577ab2e22c26798d070c9cefb33fe7c3483079065bf8e3804dd81b829942"
+    }
+  ]
+}

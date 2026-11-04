@@ -1,0 +1,76 @@
+/* Shared header: identical geometry on every page. */
+html{scrollbar-gutter:stable}
+header.site-header{position:sticky;top:0;z-index:10;background:rgba(3,8,15,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.12);font-family:Inter,Arial,sans-serif;line-height:1.6}
+.site-header .container{width:min(1200px,calc(100% - 44px));margin-inline:auto}
+.site-header .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-header a{color:inherit;text-decoration:none}
+.site-header .brand{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:800;line-height:1.15;letter-spacing:.02em;flex-shrink:0;color:#f5f7fa}
+.site-header .brand-icon{display:block;width:32px;height:40px;flex:0 0 32px;color:#ffc400}
+.site-header .brand-icon svg{display:block;width:100%;height:100%}
+.site-header .brand small{display:block;color:#ffc400;font-size:.8rem;letter-spacing:.08em}
+.site-header nav{display:flex;align-items:center;gap:28px;font-size:.83rem;font-weight:700;text-transform:uppercase}
+.site-header nav a{padding:8px 0;color:#e6e9ef}
+.site-header nav a:hover{color:#ffc400}
+.site-header .menu-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,.12);color:#f5f7fa;border-radius:4px;padding:10px 12px;cursor:pointer;flex-shrink:0;font:inherit;-webkit-appearance:none;appearance:none}
+.site-header svg{display:block;flex-shrink:0}
+.site-header .menu-toggle .menu-close{display:none}
+.site-header .menu-toggle[aria-expanded="true"] .menu-open{display:none}
+.site-header .menu-toggle[aria-expanded="true"] .menu-close{display:block}
+.site-header a:focus-visible,.site-header button:focus-visible{outline:2px solid #ffc400;outline-offset:4px}
+@media(min-width:901px) and (max-width:1120px){.site-header .nav{gap:14px}.site-header nav{gap:14px}}
+@media(max-width:900px){.site-header nav{gap:14px}}
+@media(max-width:650px){
+.site-header .container{width:calc(100% - 28px)}
+.site-header .nav{min-height:68px;flex-wrap:wrap;padding:10px 0;gap:12px}
+.site-header .brand{font-size:.9rem;gap:10px}
+.menu-ready .site-header .menu-toggle{display:block}
+.site-header nav{display:flex;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:0 0 10px;max-height:calc(100svh - 80px);overflow-y:auto}
+.menu-ready .site-header nav{display:none}.menu-ready .site-header nav.open{display:flex}
+.site-header nav a{padding:12px 2px;border-top:1px solid rgba(255,255,255,.12)}
+}
+@media(max-width:350px){.site-header .brand{font-size:.8rem}.site-header .brand small{font-size:.72rem}.site-header .brand-icon{width:28px;flex-basis:28px}.site-header .menu-toggle{padding:9px 10px}}
+@media print{.site-header{display:none!important}}
+
+/* Skip navigation and long-document keyboard targets. */
+.skip-link{position:fixed;top:10px;left:14px;z-index:30;padding:10px 16px;color:#111;background:#ffc400;border-radius:4px;transform:translateY(-160%);text-decoration:none}
+.skip-link:focus{transform:translateY(0)}
+.site-header nav a[aria-current="page"]{color:#ffc400;text-decoration:underline;text-underline-offset:5px}
+#obsah{scroll-margin-top:90px}
+@media print{.skip-link{display:none!important}}
+
+/* Accessible print output, including legal documents. */
+@media print{
+html{color-scheme:light;scrollbar-gutter:auto}
+body,main,.hero,.service-card,.contact,.strength{background:#fff!important;color:#000!important}
+main h1,main h2,main h3,main p,main strong,main small,main a,main span,main summary,.intro,.eyebrow,.foot,.foot a,footer,footer a{color:#000!important;text-shadow:none!important}
+.hero::before,.hero::after,.light-control-wrap,.contact-copy,.contact-copy-status,.copy-manual,.actions{display:none!important}
+.js .contact-method .contact-detail strong,.home-ready .contact-method .contact-detail strong{padding-right:0!important}
+.hero{min-height:0}.hero-content{padding:20px 0}.terms section{break-inside:auto}
+}
+
+/* Pointer-only glow for the selected warm-coloured labels and switch frame. */
+.site-header .brand small,.hero-glow{width:fit-content}
+@media (hover:hover) and (pointer:fine){
+ .warm-glow:hover,.site-header .brand small:hover{
+  color:#fff3b0;
+  text-shadow:0 0 3px #ffc400,0 0 7px rgba(255,196,0,.85);
+ }
+ .light-toggle:hover{
+  border-color:#fff3b0;
+  box-shadow:0 0 3px #ffc400,0 0 7px rgba(255,196,0,.85),inset 0 0 3px rgba(255,196,0,.6);
+ }
+}
+@media print{
+ .warm-glow,.light-toggle{filter:none!important;text-shadow:none!important;box-shadow:none!important}
+}
+
+@media (hover:hover) and (pointer:fine){
+ .light-toggle-label:hover{
+  color:#fff3b0;
+  text-shadow:0 0 3px #ffc400,0 0 7px rgba(255,196,0,.85);
+ }
+ .light-switch-icon:hover{
+  color:#fff3b0;
+  filter:drop-shadow(0 0 3px #ffc400) drop-shadow(0 0 7px rgba(255,196,0,.85));
+ }
+}
